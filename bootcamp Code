@@ -1,0 +1,22 @@
+def main():
+    list = []
+    numbers = str(input("What is your next number for the list? Type done to stop: "))
+    i = 0
+    j = 0
+    totalSum = 0 
+    while numbers != "done":
+        list.append(int(numbers))
+        numbers = input("What is your next number for the list? Type done to stop: ")
+    while i < len(list):
+        totalSum = totalSum + list[i]
+        i = i + 1
+    print(totalSum)
+    print(list)
+    while j < len(list):
+        k = j + 1
+        while k < len(list):
+            if list[j] * list[k] > totalSum:
+                print("(" + str(list[j]) + "," + str(list[k]) + ")")
+            k = k + 1
+        j = j + 1
+main()
